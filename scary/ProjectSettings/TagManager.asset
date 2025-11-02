@@ -7,6 +7,7 @@ TagManager:
   - land
   - ghost
   - door
+  - proof
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - UI
   - Player
   - ghost
-  - 
-  - 
+  - ground
+  - grate
   - 
   - 
   - 

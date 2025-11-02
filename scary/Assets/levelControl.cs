@@ -25,12 +25,28 @@ public class levelControl : MonoBehaviour
         {
             SceneManager.LoadScene("LevelThree");
         }
+        if (SceneManager.GetActiveScene().name == "LevelThree")
+        {
+            SceneManager.LoadScene("LevelFour");
+        }
+        if (SceneManager.GetActiveScene().name == "LevelFour")
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
-  void OnCollisionEnter2D(Collision2D collision)
-  {
-    if (collision.gameObject.tag == "Player")
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
             LoadNext();
         }
-  }
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("LevelOne");
+    }
+    public void OpenBuilder()
+    {
+        SceneManager.LoadScene("Builder");
+    }
 }

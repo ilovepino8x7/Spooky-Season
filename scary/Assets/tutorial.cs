@@ -21,6 +21,11 @@ public class tutorial : MonoBehaviour
     {
       tutorialNum = 3;
     }
+    else if (SceneManager.GetActiveScene().name == "LevelThree")
+    {
+      tutorialNum = 7;
+    }
+    
   }
   void Update()
   {
@@ -29,7 +34,11 @@ public class tutorial : MonoBehaviour
   }
   public void CheckStage()
   {
-    if (tutorialNum == 0)
+    if (SceneManager.GetActiveScene().name == "LevelFour")
+    {
+      tutorialNum = 10;
+    }
+    else if (tutorialNum == 0)
     {
       if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
       {

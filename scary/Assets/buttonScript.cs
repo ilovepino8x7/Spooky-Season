@@ -3,6 +3,7 @@ using UnityEngine;
 public class buttonScript : MonoBehaviour
 {
     public GameObject linkedGate;
+    public tutorial tt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,10 @@ public class buttonScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (tt != null)
+            {
+                tt.switchTutorial(8);
+            }
             linkedGate.GetComponent<grateControl>().moveAway();
         }
     }

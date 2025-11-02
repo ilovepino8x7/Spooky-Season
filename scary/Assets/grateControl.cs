@@ -4,7 +4,7 @@ using UnityEngine;
 public class grateControl : MonoBehaviour
 {
     public BoxCollider2D hi;
-    public Transform target;
+    public Vector3 target;
     private bool moved = false;
     private bool moving = false;
     private int moveSpeed = 8;
@@ -17,7 +17,11 @@ public class grateControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) <= 0.1)
+        if (target == null)
+        {
+            target = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+        }
+        if (Vector2.Distance(transform.position, target) <= 0.1)
         {
             moving = false;
         }

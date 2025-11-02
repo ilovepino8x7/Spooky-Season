@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3376594298840370175}
   - component: {fileID: 4169219997154825153}
   - component: {fileID: 3952188701268044088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GhostProof
-  m_TagString: Untagged
+  m_TagString: proof
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

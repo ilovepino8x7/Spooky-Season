@@ -9,6 +9,8 @@ public class playerMove : MonoBehaviour
     private bool isGhost = false;
     private bool startedReset = false;
     private bool doneGhost;
+    public int toBuild = 0;
+    private bool doneProof;
     private int moving = 0;
     private Rigidbody2D rb;
     public tutorial tt;
@@ -70,13 +72,10 @@ public class playerMove : MonoBehaviour
                 rb.linearVelocity = new Vector2(0, 0);
                 transform.position += new Vector3(0, -moveSpeed * Time.deltaTime);
             }
-            if (SceneManager.GetActiveScene().name != "LevelTwo")
+            if (SceneManager.GetActiveScene().name == "LevelFour" && !startedReset)
             {
-                if (!startedReset)
-                {
-                    startedReset = true;
-                    StartCoroutine(resetToPlayer(3));
-                }
+                startedReset = true;
+                StartCoroutine(resetToPlayer(1));
             }
         }
         else
@@ -107,7 +106,7 @@ public class playerMove : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "land")
+        if (collision.gameObject.layer == 8)
         {
             grounded = true;
         }
@@ -117,6 +116,14 @@ public class playerMove : MonoBehaviour
             {
                 doneGhost = true;
                 tt.switchTutorial(5);
+            }
+        }
+        else if (collision.gameObject.tag == "proof" && !doneProof && gameObject.layer == 7)
+        {
+            if (tt != null)
+            {
+                doneProof = true;
+                tt.switchTutorial(7);
             }
         }
     }

@@ -296,8 +296,12 @@ PrefabInstance:
       value: Ground 1
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.702349
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7905
+      value: -1.2905006
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -894,7 +898,6 @@ MonoBehaviour:
   - Move left and right with 'a' and 'd'
   - Jump with 'space'
   - Get to the door to move to the next stage.
-  tutorialNum: 0
   tut: {fileID: 1955144177}
 --- !u!114 &1955144177
 MonoBehaviour:
@@ -1008,8 +1011,12 @@ PrefabInstance:
       value: Ground 1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.701738
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.84
+      value: 1.8400002
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1077,8 +1084,12 @@ PrefabInstance:
       value: Ground 1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.701738
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1223,8 +1234,12 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.703115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 6963475133802796280, guid: 70b041d532a7643588333e4289b2041f, type: 3}
       propertyPath: m_LocalPosition.y
