@@ -15,18 +15,22 @@ public class levelControl : MonoBehaviour
 
     }
 
-    public void CheckScene()
+    public void LoadNext()
     {
         if (SceneManager.GetActiveScene().name == "LevelOne")
         {
             SceneManager.LoadScene("LevelTwo");
+        }
+        if (SceneManager.GetActiveScene().name == "LevelTwo")
+        {
+            SceneManager.LoadScene("LevelThree");
         }
     }
   void OnCollisionEnter2D(Collision2D collision)
   {
     if (collision.gameObject.tag == "Player")
         {
-            CheckScene();
+            LoadNext();
         }
   }
 }

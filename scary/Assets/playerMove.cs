@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMove : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class playerMove : MonoBehaviour
     private bool grounded = false;
     private bool isGhost = false;
     private bool startedReset = false;
+    private bool doneGhost;
     private int moving = 0;
     private Rigidbody2D rb;
+    public tutorial tt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,9 +19,13 @@ public class playerMove : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGhost)
+        if (!isGhost)
         {
-            isGhost = true;
+            rb.gravityScale = 0.5f;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isGhost = !isGhost; 
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -40,33 +47,36 @@ public class playerMove : MonoBehaviour
         transform.rotation = Quaternion.identity;
         if (isGhost)
         {
-            rb.linearVelocity = new Vector2(0,0);
+            rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 0;
             gameObject.layer = 7;
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                rb.linearVelocity = new Vector2(0,0);
+                rb.linearVelocity = new Vector2(0, 0);
                 transform.position += new Vector3(-moveSpeed * Time.deltaTime, 0);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                rb.linearVelocity = new Vector2(0,0);
+                rb.linearVelocity = new Vector2(0, 0);
                 transform.position += new Vector3(moveSpeed * Time.deltaTime, 0);
             }
-            else if (Input.GetKey(KeyCode.W))
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
-                rb.linearVelocity = new Vector2(0,0);
+                rb.linearVelocity = new Vector2(0, 0);
                 transform.position += new Vector3(0, moveSpeed * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
-                rb.linearVelocity = new Vector2(0,0);
+                rb.linearVelocity = new Vector2(0, 0);
                 transform.position += new Vector3(0, -moveSpeed * Time.deltaTime);
             }
-            if (!startedReset)
+            if (SceneManager.GetActiveScene().name != "LevelTwo")
             {
-                startedReset = true;
-                StartCoroutine(resetToPlayer());
+                if (!startedReset)
+                {
+                    startedReset = true;
+                    StartCoroutine(resetToPlayer(3));
+                }
             }
         }
         else
@@ -101,10 +111,18 @@ public class playerMove : MonoBehaviour
         {
             grounded = true;
         }
+        else if (collision.gameObject.tag == "door" && !doneGhost)
+        {
+            if (tt != null)
+            {
+                doneGhost = true;
+                tt.switchTutorial(5);
+            }
+        }
     }
-    public IEnumerator resetToPlayer()
+    public IEnumerator resetToPlayer(int length = 0)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(length);
         isGhost = false;
         startedReset = false;
         rb.gravityScale = 0.5f;

@@ -3,10 +3,12 @@ using UnityEngine;
 using TMPro;
 using System.Buffers.Text;
 using UnityEngine.SceneManagement;
+using System;
 public class tutorial : MonoBehaviour
 {
   public string[] stages;
-  public int tutorialNum = 0;
+  private int tutorialNum = 0;
+  private bool switching = false;
   public TMP_Text tut;
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
@@ -41,15 +43,10 @@ public class tutorial : MonoBehaviour
         tutorialNum = 2;
       }
     }
-    else if (tutorialNum == 3)
+    else if (tutorialNum == 3 && !switching)
     {
-      if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
-      {
-        {
-          tutorialNum = 4;
-          StartCoroutine(Wait(2));
-        }
-      }
+      switching = true;
+      StartCoroutine(Wait(2, () => switchTutorial(3)));
     }
     else if (tutorialNum == 4)
     {
@@ -58,11 +55,14 @@ public class tutorial : MonoBehaviour
         tutorialNum = 5;
       }
     }
-
-
   }
-  public IEnumerator Wait(int time)
-    {
-        yield return new WaitForSeconds(time);
-    } 
+  public IEnumerator Wait(int time, Action func = null)
+  {
+    yield return new WaitForSeconds(time);
+    func?.Invoke();
+  }
+  public void switchTutorial(int current)
+  {
+    tutorialNum = current + 1;
+  }
 }

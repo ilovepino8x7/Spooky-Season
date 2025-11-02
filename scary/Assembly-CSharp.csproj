@@ -50,7 +50,9 @@
   <ItemGroup>
     <Compile Include="Assets/levelControl.cs" />
     <Compile Include="Assets/playerMove.cs" />
+    <Compile Include="Assets/buttonScript.cs" />
     <Compile Include="Assets/tutorial.cs" />
+    <Compile Include="Assets/grateControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
