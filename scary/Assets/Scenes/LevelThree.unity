@@ -1649,6 +1649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostProof
       objectReference: {fileID: 0}
+    - target: {fileID: 232457294496388249, guid: 6a14e2c3a5c3f4d92b5e907be3554c77, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3376594298840370175, guid: 6a14e2c3a5c3f4d92b5e907be3554c77, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.6225157

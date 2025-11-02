@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: cffda8432ad84489f9e7944303ec1ade
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - aud: {instanceID: 0}
+  - creak: {fileID: 8300000, guid: 66dbe3ecb4704422f8cf1625270560e4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

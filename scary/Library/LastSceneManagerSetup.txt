@@ -1,9 +1,13 @@
 sceneSetups:
-- path: Assets/Scenes/LevelTwo.unity
+- path: Assets/Scenes/Victory.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/LevelOne.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/LevelTwo.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

@@ -14,6 +14,9 @@ public class playerMove : MonoBehaviour
     private int moving = 0;
     private Rigidbody2D rb;
     public tutorial tt;
+    public SpriteRenderer sp;
+    public Color normal;
+    public Color ghost;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +52,7 @@ public class playerMove : MonoBehaviour
         transform.rotation = Quaternion.identity;
         if (isGhost)
         {
+            sp.color = ghost;
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 0;
             gameObject.layer = 7;
@@ -80,6 +84,7 @@ public class playerMove : MonoBehaviour
         }
         else
         {
+            sp.color = normal;
             gameObject.layer = 6;
         }
     }

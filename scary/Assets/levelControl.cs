@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class levelControl : MonoBehaviour
 {
+    public AudioSource aud;
+    public AudioClip creak;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,7 @@ public class levelControl : MonoBehaviour
 
     public void LoadNext()
     {
+        aud.PlayOneShot(creak);
         if (SceneManager.GetActiveScene().name == "LevelOne")
         {
             SceneManager.LoadScene("LevelTwo");
@@ -31,7 +34,7 @@ public class levelControl : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "LevelFour")
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Victory");
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

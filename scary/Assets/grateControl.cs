@@ -8,6 +8,8 @@ public class grateControl : MonoBehaviour
     private bool moved = false;
     private bool moving = false;
     private int moveSpeed = 8;
+    public AudioSource aud;
+    public AudioClip ac;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,7 @@ public class grateControl : MonoBehaviour
     {
         if (!moved)
         {
+            aud.PlayOneShot(ac);
             moving = true;
             moved = true;
         }
